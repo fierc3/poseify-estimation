@@ -1,5 +1,0 @@
-flask
-pika
-opencv-python
-mediapipe
-numpy

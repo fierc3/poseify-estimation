@@ -1,15 +1,15 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": "poseify-estimation",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/python:1-3.8-bookworm",
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install --user -r app/requirements.txt && sudo apt-get update && sudo apt-get install ffmpeg libsm6 libxext6  -y",
-	"runArgs": [
-		"--network=poseify-dev-net"
-	],
-	"mounts": [
-		"source=C:/share/poseify,target=/poseify,type=bind,consistency=cached"
-	]
+    "name": "poseify-estimation",
+    "build": {
+        "context": "..",
+        "dockerfile": "../Dockerfile"
+    },
+    "runArgs": [
+        "--gpus", "all",
+        "--network=poseify-dev-net"
+    ],
+    "mounts": [
+        "source=C:/share/poseify,target=/poseify,type=bind,consistency=cached"
+    ],
+    "postCreateCommand": "echo Poseify-Estimation is ready!"
 }
