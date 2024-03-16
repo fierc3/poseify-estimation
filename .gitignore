@@ -1,1 +1,3 @@
 ﻿flask/app/__pycache__
+flask/app/poseestimation/bvh_skeleton/__pycache__
+flask/app/poseestimation/__pycache__

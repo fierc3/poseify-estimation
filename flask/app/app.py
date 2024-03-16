@@ -32,7 +32,8 @@ def start_consuming_video2pose():
             print(properties)
             startVideo2Pose(
                 properties.headers.get('GUID'), 
-                properties.headers.get('Type'))
+                properties.headers.get('Type'),
+                properties.headers.get("User"))
         except Exception as e:
             print(f"Error during video2pose step: {e}")
             errorQueue(properties.headers.get('GUID', "unknown id"), properties.headers.get('Type', "unknown type"), str(e))
