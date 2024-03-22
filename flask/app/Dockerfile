@@ -54,4 +54,6 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 EXPOSE 80
 
 # Define environment variable
-ENV NAME VideoPose3D
+ENV NAME Poseify-Estimation
+
+CMD ["flask", "run", "--host=0.0.0.0"]
